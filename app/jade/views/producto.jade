@@ -1,0 +1,29 @@
+.hero-unit
+  h1 PRODUCTOS
+  div.gridStyles(ng-grid="gridOptions")
+  p despues del nggrid
+  table.table.table-striped
+    tr
+      th Identificador
+      th Descripción
+      th Grupo
+      th &nbsp;
+      th &nbsp;
+        tr(ng-repeat="thing in awesomeThings | orderBy: 'num_grupo' ", ng-model="nid_producto")
+          td {{thing.id_producto}}
+          td {{thing.desc_producto}}
+          td {{thing.num_grupo}}
+          td
+            //button.btn.btn-primary(type='submit' ng-click="eProducto(dato.id_producto, dato.desc_producto, dato.num_grupo)") Editar
+            button.btn.btn-primary(type='submit') Editar
+          td
+            //button.btn.btn-danger(type='submit' ng-click="eliminarProducto(dato.id_producto)") Eliminar
+            button.btn.btn-danger(type='submit') Eliminar
+  div(ng-grid="gridOpts")
+  //ul
+    li Jade
+    li(ng-repeat="thing in awesomeThings") {{thing.id_producto}}
+    p This is the product view
+    a(href="#/grupo") grupo
+
+

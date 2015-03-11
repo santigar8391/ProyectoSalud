@@ -1,0 +1,33 @@
+
+<div class="hero-unit">
+  <h1>PRODUCTOS</h1>
+  <div ng-grid="gridOptions" class="gridStyles"></div>
+  <p>despues del nggrid</p>
+  <table class="table table-striped">
+    <tr>
+      <th>Identificador</th>
+      <th>Descripción</th>
+      <th>Grupo</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;
+        <tr ng-repeat="thing in awesomeThings | orderBy: 'num_grupo' " ng-model="nid_producto">
+          <td>{{thing.id_producto}}</td>
+          <td>{{thing.desc_producto}}</td>
+          <td>{{thing.num_grupo}}</td>
+          <td>
+            <!--button.btn.btn-primary(type='submit' ng-click="eProducto(dato.id_producto, dato.desc_producto, dato.num_grupo)") Editar-->
+            <button type="submit" class="btn btn-primary">Editar</button>
+          </td>
+          <td>
+            <!--button.btn.btn-danger(type='submit' ng-click="eliminarProducto(dato.id_producto)") Eliminar-->
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </th>
+    </tr>
+  </table>
+  <div ng-grid="gridOpts"></div><!--ul
+  <li>Jade</li>
+  <li ng-repeat="thing in awesomeThings">{{thing.id_producto}}</li>
+  <p>This is the product view</p><a href="#/grupo">grupo</a>-->
+</div>
